@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "Graphik";
+  src: url("/Graphik-Semibold.bf12c165.woff2") format("woff2"), url("/Graphik-Semibold.57e2857c.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik";
+  src: url("/Graphik-Regular.acf33fd9.woff2") format("woff2"), url("/Graphik-Regular.27a9d909.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Graphik";
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.5;
+}
+body header,
+body main {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-width: 320px;
+}
+body header h1 {
+  text-align: center;
+  margin: 2em 0em;
+}
+@media screen and (max-width: 320px) {
+  body header h1 {
+    font-size: 1.8em;
+  }
+}
+body main {
+  margin-bottom: 3em;
+}
+body main .card-container {
+  max-width: 380px;
+  min-width: 250px;
+  margin: 0 auto;
+}
+body main .card-container .card {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+  color: #fff;
+}
+body main .card-container .card .front,
+body main .card-container .card .back {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  padding: 1em 1.5em;
+}
+body main .card-container .card .front h2,
+body main .card-container .card .front p,
+body main .card-container .card .back h2,
+body main .card-container .card .back p {
+  margin: 0;
+  padding: 0;
+}
+body main .card-container .card .front button,
+body main .card-container .card .back button {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 0.8em;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+body main .card-container .card .front button:hover,
+body main .card-container .card .back button:hover {
+  cursor: pointer;
+}
+body main .card-container .card .front button:focus,
+body main .card-container .card .back button:focus {
+  outline: none;
+}
+body main .card-container .card .front button img,
+body main .card-container .card .back button img {
+  margin: 0;
+  margin-right: 0.6em;
+  padding: 0;
+}
+body main .card-container .card .front {
+  background: #5031AA;
+}
+body main .card-container .card .back {
+  background: #231E32;
+  transform: rotateY(-180deg);
+}
+body main .card-container .card.flipCard {
+  transform: rotateY(-180deg);
+}
+@media screen and (max-width: 480px) {
+  body main .card-container {
+    width: 300px;
+  }
+  body main .card-container .card .front,
+body main .card-container .card .back {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 400px) {
+  body main .card-container {
+    width: 260px;
+  }
+  body main .card-container .card .front,
+body main .card-container .card .back {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 320px) {
+  body main .card-container {
+    width: 250px;
+  }
+}
+
+/*# sourceMappingURL=/styles.164d45a1.css.map */

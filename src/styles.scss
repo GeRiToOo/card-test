@@ -1,0 +1,156 @@
+@import "./styles/fonts.scss";
+
+$maxWidth:1200px;
+$minWidth:320px;
+$mobileLargeBreakpoint:480px;
+$mobileMiddleBreakpoint:400px;
+$mobileSmallBreakpoint:320px;
+$cardFrontBackground:#5031AA;
+$cardBackBackground:#231E32;
+$fontFamilyBase: "Graphik";
+$fontBaseColor: #fff;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fontFamilyBase;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.5;
+
+    header,
+    main {
+        margin: 0 auto;
+        max-width: $maxWidth;
+        min-width: $minWidth;
+    }
+
+    header {
+        h1 {
+            text-align: center;
+            margin: 2em 0em;
+        }
+
+        @media screen and (max-width: $mobileSmallBreakpoint) {
+                h1 {
+                    font-size: 1.8em;
+                }
+        }
+    }
+
+    main {
+        margin-bottom: 3em;
+
+        .card-container {
+            max-width: 380px;
+            min-width: 250px;
+            margin: 0 auto;
+
+            .card {
+                position: relative;
+                width: 100%;
+                min-height: 400px;
+                transition: all 0.5s;
+                transform-style: preserve-3d;
+                color: $fontBaseColor;
+
+                .front,
+                .back {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    width: 100%;
+                    min-height: 400px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    backface-visibility: hidden;
+                    padding: 1em 1.5em;
+
+                    h2,
+                    p {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    button {
+                        display: flex;
+                        align-items: center;
+                        padding: 0;
+                        background: none;
+                        border: none;
+                        color: $fontBaseColor;
+                        font-size: 0.8em;
+                        margin-top: 1.5em;
+                        margin-bottom: 1em;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        img {
+                            margin: 0;
+                            margin-right: 0.6em;
+                            padding: 0;
+                        }
+                    }
+                }
+
+                .front {
+                    background: $cardFrontBackground;
+                }
+
+                .back {
+                    background: $cardBackBackground;
+                    transform: rotateY(-180deg)
+                }
+            }
+
+            .card.flipCard {
+                transform: rotateY(-180deg)
+            }
+        }
+
+        @media screen and (max-width: $mobileLargeBreakpoint) {
+
+            .card-container {
+                width: 300px;
+
+                .card {
+
+                    .front,
+                    .back {
+                        font-size: 0.9em;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: $mobileMiddleBreakpoint) {
+
+            .card-container {
+                width: 260px;
+
+                .card {
+                    .front,
+                    .back {
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: $mobileSmallBreakpoint) {
+
+            .card-container {
+                width: 250px;
+            }
+        }
+    }
+}
