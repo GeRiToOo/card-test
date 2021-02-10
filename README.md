@@ -1,4 +1,6 @@
-# Wiser | Junior Front End Developer Test
+# Wiser | Front End Developer Test
+
+* ReactApp
 
 ## Instructions
 
